@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicedoc/tauri/dev/crates/tauri-config-schema/schema.json",
+  "productName": "DevForge",
+  "version": "0.1.0",
+  "identifier": "com.devforge.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DevForge",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "decorations": false,
+        "center": true,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "plugins": {
+    "shell": {
+      "scope": {
+        "open": true
+      }
+    },
+    "fs": {
+      "scope": {
+        "allow": ["$APPDATA/**", "$HOME/**"],
+        "deny": []
+      }
+    },
+    "http": {
+      "scope": {
+        "allow": [{ "url": "https://**" }, { "url": "http://**" }]
+      }
+    }
+  }
+}
