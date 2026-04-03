@@ -39,13 +39,8 @@ if %errorlevel% neq 0 (
     set NO_RUST=0
 )
 
-:: Navigate to devforge directory
-cd /d "%~dp0devforge"
-if %errorlevel% neq 0 (
-    echo  [ERROR] devforge directory not found.
-    pause
-    exit /b 1
-)
+:: Navigate to this script's directory (the devforge folder)
+cd /d "%~dp0"
 
 :: Install dependencies
 echo.
